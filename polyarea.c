@@ -90,10 +90,10 @@ polygon_area(double * RESTRICT p, int M, int m)
     double A;
 
     A = 0.0;
-
-    for (k=0; k<m; k++) {
+    for (k=0; k<m-1; k++) {
         A += p[k]*p[M+k+1] - p[k+1]*p[M+k];
     }
+    A += p[k]*p[M] - p[0]*p[M+k];
     A *= 0.5;
 
     /* make area independent of polygon orientation */
