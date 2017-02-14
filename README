@@ -1,0 +1,66 @@
+
+Polygon Functions for Octave & MATLAB
+=====================================
+
+A mex interface to the Clipper library by Angus Johnson
+http://www.angusj.com/delphi/clipper.php, and mex
+functions for fast calculation of polygon orientation and
+for testing if a point is inside a polygon.
+
+
+Polygon clipping:
+-----------------
+
+       [pc,hc] = polybool(pa, pb, 'op', ha, hb, ug);
+       
+where 'op' can be 'and' (intersection), 'or' (union), 'notb' or 'diff'
+(difference), and 'xor'. pa, pb, and pc are cell arrays with nx2
+matrices containing polygon vertices (one vertex per row). ha, hb, hc
+are logical arrays with hole flags. If ha(k) > 0, then pa{k} is an
+interior polygon belonging to a polygon with one or more holes. The 
+clipping operation is performed on an integer grid. The polygon data
+are multiplied with the scale factor 'ug' prior to the clipping
+operation and the resulting polygons are scaled by 1/ug.
+
+
+Polygon orientation:
+--------------------
+
+       cw = iscw(pa);
+       
+Make polygons oriented clockwise:
+
+       P = polycw(pa);
+
+where P and pa are cell arrays of polygons.
+
+
+Check if points are inside a polygon:
+-------------------------------------
+
+	inp = isinpolygon(polygon, xy);
+
+where 'polygon' is a n x 2 array of polygon vertices and 'xy' an n x 2 array
+of points. 'inp' is a logical arrray.
+
+
+Compilation:
+------------
+The mex functions must be compiled before they can used.
+
+On MATLAB or on Octave/Windows type the command
+   
+   makemex
+
+at the MATLAB prompt (the polybool directory must be the current 
+directory). For Octave on Linux compile the mex functions by 
+running 
+
+   ./makemex-octave
+
+at a shell prompt.
+
+------------------------
+Ulf GRIESMANN, August 2014
+ulf.griesmann@nist.gov
+ulfgri@gmail.com
