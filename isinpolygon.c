@@ -12,7 +12,7 @@
 
 #include <math.h>
 #include <string.h>
-#include "mex.h"
+#include <mex.h>
 
 #ifdef __GNUC__
    #define RESTRICT __restrict
@@ -25,7 +25,7 @@
 
 /*-- local prototypes -----------------------------------------*/
 
-static INLINE int
+INLINE int
 in_polygon(int N, double * RESTRICT pol, double X, double Y);
 
 
@@ -87,7 +87,7 @@ mexFunction(int nlhs, mxArray *plhs[],
  *
  * Algorithm from Paul Bourke, http://paulbourke.net/geometry
  */
-static INLINE int 
+INLINE int 
 in_polygon(int N, double * RESTRICT pol, double X, double Y)
 {
    int i, j, c = 0;

@@ -11,11 +11,10 @@ function cw = iscw(pin)
 
 % Initial version, Ulf Griesmann, NIST, November 2012
 
-% check argument
-if ~iscell(pin), pin = {pin}; end
+    % check argument
+    if ~iscell(pin), pin = {pin}; end
 
-% call mex function
-cw = iscwmex(pin);
+    % call mex function
+    cw = iscwmex(pin);
 
-return
-
+end

@@ -1,6 +1,5 @@
 /*
  * A mex function to compute the orientation of polygons
- * for the GDS II toolbox
  * 
  * [cw] = iscw(pa);
  *
@@ -25,7 +24,7 @@
 
 /*-- local prototypes -----------------------------------------*/
 
-static INLINE int
+INLINE int
 clock_wise(double * RESTRICT p, int N);
 
 
@@ -81,7 +80,7 @@ mexFunction(int nlhs, mxArray *plhs[],
  *
  * Algorithm from Paul Bourke, http://paulbourke.net/geometry/polygonmesh/
  */
-static INLINE int 
+INLINE int 
 clock_wise(double * RESTRICT p, int N)
 {
    int i,j,k,n;

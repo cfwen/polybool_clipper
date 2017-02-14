@@ -1,3 +1,7 @@
+November 24, 2016; Ulf Griesmann
+- update clipper library to version 6.4
+- add functions 'polyarea' and 'polycentr'.
+
 September 2, 2014; Ulf Griesmann
 - version 23
 - fix a small error in the help text

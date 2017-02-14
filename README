@@ -28,7 +28,7 @@ Polygon orientation:
 
        cw = iscw(pa);
        
-Make polygons oriented clockwise:
+Make polygons oriented clockwise (cw) or counter clockwise (ccw):
 
        P = polycw(pa);
 
@@ -38,10 +38,28 @@ where P and pa are cell arrays of polygons.
 Check if points are inside a polygon:
 -------------------------------------
 
-	inp = isinpolygon(polygon, xy);
+       inp = isinpolygon(polygon, xy);
 
 where 'polygon' is a n x 2 array of polygon vertices and 'xy' an n x 2 array
 of points. 'inp' is a logical arrray.
+
+
+Polygon area
+------------
+
+       A = polyarea(pa);
+
+where 'pa' is a cell array of polygons and 'A' is a vector with polygon areas.
+
+
+Polygon centroid
+----------------
+
+       C = polycentr(pa);
+
+where 'pa' is a cell array of polygons and 'C' is an nx2 array with centroids,
+one per row for each input polygon. Call twice to calculate the combined 
+centroid of multiple polygons.
 
 
 Compilation:
@@ -61,6 +79,6 @@ running
 at a shell prompt.
 
 ------------------------
-Ulf GRIESMANN, August 2014
+Ulf GRIESMANN, 2016
 ulf.griesmann@nist.gov
 ulfgri@gmail.com

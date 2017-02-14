@@ -7,4 +7,9 @@ export CXXFLAGS='-O3 -fomit-frame-pointer -march=native -mtune=native'
 mkoctfile --mex -s polyboolmex.cpp clipper.cpp
 mkoctfile --mex -s iscwmex.c
 mkoctfile --mex -s isinpolygon.c
+mkoctfile --mex -s polyarea.c
+mkoctfile --mex -s polycentr.c
 rm *.o
+
+echo "Done."
+

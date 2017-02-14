@@ -20,6 +20,8 @@ if ~(exist('OCTAVE_VERSION')==5)
     mex -O polyboolmex.cpp clipper.cpp
     mex -O iscwmex.c
     mex -O isinpolygon.c
+    mex -O polyarea.c
+    mex -O polycentr.c
     
 else % we are on Octave with gcc
 
@@ -33,6 +35,8 @@ else % we are on Octave with gcc
     mex polyboolmex.cpp clipper.cpp
     mex iscwmex.c
     mex isinpolygon.c
+    mex polyarea.c
+    mex polycentr.c
     system('del *.o');
 
 end
